@@ -1,0 +1,65 @@
+{
+  "plugins": [
+    ["transform-class-properties", { "spec": true },
+    "transform-object-rest-spread"]
+  ],
+  "presets": [ "react"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "chrome >= 55",
+                "IE >= 11"
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "test": {
+      "plugins": [
+        "transform-async-to-generator"
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "chrome >= 55",
+                "IE >= 11"
+              ]
+            },
+            "useBuiltIns": true
+          }
+        ]
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "chrome >= 55",
+                "IE >= 11"
+              ]
+            }
+          }
+        ],
+        "minify"
+      ]
+    }
+  }
+}
